@@ -20,25 +20,46 @@ int main(){
     {
         int m;
         scanf("%d" , &m);
-        for (int j = 1; i <= sqrt(m); j++)
+        for (int j = 1; j <= m; j++)
         {
             if (m%j==0)
             {
                 vec.push_back(j);
-                if (j!=m/j)
-                {
-                    vec.push_back(m / j);
-                }
             }
         }
         if (vec.size()<4)
         {
-            printf("No");
+            printf("No\n");
             continue;
         }
-        
-        
-        
+        int tag = 0;
+        for (int a = 0; a < vec.size()-3&&tag==0; a++)
+        {
+            for (int b = a+1; b < vec.size()-2&&tag==0; b++)
+            {
+                for (int c = b+1; c < vec.size()-1&&tag==0; c++)
+                {
+                    for (int d = c+1; d < vec.size()&&tag==0; d++)
+                    {
+                        if ((vec[a]+vec[b]+vec[c]+vec[d])%m==0)
+                        {
+                            printf("Yes\n");
+                            tag = 1;
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        if (tag==0)
+        {
+            printf("No\n");
+        }
+        vec.clear();
+        tag = 0;
     }
     
 }
