@@ -30,6 +30,7 @@ int main(){
         if (vec.size()<4)
         {
             printf("No\n");
+            vec.clear();
             continue;
         }
         int tag = 0;
