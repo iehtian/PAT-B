@@ -126,3 +126,12 @@ if (jieguo<0&&jieguo>-0.005)
     printf("0.00");
 ```
 
+cin读到回车结束
+
+```
+while(cin>>a){
+	if(cin.get()=='\n')
+		break;
+}
+```
+
